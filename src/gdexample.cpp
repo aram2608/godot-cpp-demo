@@ -1,4 +1,4 @@
-#include "gdexample.h"
+#include "gdexample.hpp"
 #include <godot_cpp/core/class_db.hpp>
 
 using namespace godot;
@@ -6,6 +6,8 @@ using namespace godot;
 void GDExample::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_amplitude"), &GDExample::get_amplitude);
 	ClassDB::bind_method(D_METHOD("set_amplitude", "p_amplitude"), &GDExample::set_amplitude);
+	ClassDB::bind_method(D_METHOD("get_speed"), &GDExample::get_speed);
+	ClassDB::bind_method(D_METHOD("set_spped", "p_speed"), &GDExample::set_speed);
 
 	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
 	ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
@@ -49,4 +51,12 @@ void GDExample::set_amplitude(const double p_amplitude) {
 
 double GDExample::get_amplitude() const {
 	return amplitude;
+}
+
+void GDExample::set_speed(const double p_speed) {
+	speed = p_speed;
+}
+
+double GDExample::get_speed() const {
+    return speed;
 }

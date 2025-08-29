@@ -1,5 +1,5 @@
-#ifndef GDEXAMPLE_H
-#define GDEXAMPLE_H
+#ifndef GDEXAMPLE_HPP
+#define GDEXAMPLE_HPP
 
 #include <godot_cpp/classes/sprite2d.hpp>
 
@@ -25,6 +25,9 @@ public:
 
 	void set_amplitude(const double p_amplitude);
 	double get_amplitude() const;
+
+	void set_speed(const double p_speed);
+	double get_speed() const;
 };
 
 }
