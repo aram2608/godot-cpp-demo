@@ -1,0 +1,18 @@
+[configuration]
+
+entry_symbol = "example_library_init"
+compatibility_minimum = "4.1"
+reloadable = true
+
+[libraries]
+
+macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
+macos.release = "res://bin/libgdexample.macos.template_release.framework"
+
+[dependencies]
+ios.debug = {
+    "res://bin/libgodot-cpp.ios.template_debug.xcframework": ""
+}
+ios.release = {
+    "res://bin/libgodot-cpp.ios.template_release.xcframework": ""
+}
